@@ -1,0 +1,17 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.DynamicalAspectsMeasurePreservingTransformationsCanonicalLaneLean.InvariantMeasurePackage
+import HautevilleHouse.DynamicalAspectsMeasurePreservingTransformationsCanonicalLaneLean.BirkhoffErgodicTheorem
+import HautevilleHouse.DynamicalAspectsMeasurePreservingTransformationsCanonicalLaneLean.ErgodicDecomposition
+
+namespace HautevilleHouse
+namespace DynamicalAspectsMeasurePreservingTransformationsCanonicalLaneLean
+
+def ConstrainedDynamicalAspectsClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_dynamical_aspects_endgame (A : AdmissibleClass) :
+    ConstrainedDynamicalAspectsClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end DynamicalAspectsMeasurePreservingTransformationsCanonicalLaneLean
+end HautevilleHouse
